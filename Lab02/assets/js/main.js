@@ -1,4 +1,4 @@
-/*function toggleTheme() {
+function toggleTheme() {
     var declaration = document.getElementsByTagName('html')[0];
     if (getComputedStyle(document.body).getPropertyValue('--body-color') == "white") {
         //Switch to purple major
@@ -13,4 +13,4 @@
         declaration.style.setProperty("--background-color", "rgb(144, 64, 219)");
         declaration.style.setProperty("--section-text-color", "black");
     }
-}*/
+}

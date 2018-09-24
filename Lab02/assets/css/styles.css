@@ -1,17 +1,14 @@
 /* Variables */
-
 :root {
   --background-color: rgb(144, 64, 219);
   --background-font-color: white;
   --navbar-bg-color: rgb(179, 122, 233);
   --header-size: 1.2em;
-  --header-size-smaller: .8em;
   --body-color: white;
   --section-text-color: black;
 }
 
 /* Main CSS */
-
 body {
   margin: 0px 50px 0px 50px;
   font-family: Arial, Helvetica, sans-serif;
@@ -34,23 +31,29 @@ header p {
 
 header img {
   vertical-align: middle;
+  display: inline-block;
+  height: 65px;
+  width: 65px;
+}
+
+header .img_txt {
+  vertical-align: middle;
+  display: none;
 }
 
 navbar {
-  background-color: var(--navbar-bg-color);
-  border-radius: 0px 0px 10px 10px;
   width: 100%;
-  float: left;
   color: var(--background-font-color);
 }
 
 navbar ul {
+  background-color: var(--navbar-bg-color);
   text-align: center;
-  width: 100%;
   height: 3em;
   margin: 0 auto;
   font-size: var(--header-size);
   overflow: auto;
+  border-radius: 0px 0px 10px 10px;
 }
 
 navbar ul li {
@@ -79,12 +82,12 @@ body h3 {
 
 .main_content {
   text-align: center;
+  position: relative;
 }
 
 .main_content section {
   text-align: left;
   display: inline-block;
-  width: 28%;
   padding: 0px 25px 0px 25px;
 }
 
