@@ -1,0 +1,51 @@
+:root {
+  --header-size-smaller: .8em;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    margin: 0 10px 0 10px;
+  }
+
+  header {
+    padding: 25px;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  header p {
+    font-size: var(--header-size-smaller);
+  }
+
+  header img {
+    display: none;
+  }
+
+  header .img_txt {
+    display: inline-block;
+  }
+
+  navbar ul {
+    height: auto;
+  }
+
+  navbar ul li {
+    display: inline-flex;
+    font-size: 0.7em;
+  }
+
+  navbar ul li a {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .main_content section {
+    display: inline-block;
+    width: 23%;
+  }
+
+  .main_content section h3 {}
+}

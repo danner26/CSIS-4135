@@ -1,0 +1,74 @@
+/* Variables */
+:root {
+    --background-color: rgb(144, 64, 219);
+    --background-font-color: white;
+    --navbar-bg-color: rgb(179, 122, 233);
+    --header-size: 1.2em;
+    --body-color:white;
+    --section-text-color:black;
+}
+
+/* Main CSS */
+body {
+   margin: 0px 50px 0px 50px;
+   font-family: Arial, Helvetica, sans-serif;
+   background-color: var(--body-color);
+}
+
+header {
+    background-color: var(--background-color);
+    color: var(--background-font-color);
+    padding: 25px;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+header p {
+    font-size: var(--header-size);
+}
+header img { 
+    vertical-align: middle;
+}
+
+navbar {
+    background-color: var(--navbar-bg-color);
+    border-radius: 0px 0px 10px 10px;
+    width: 100%;
+    float: left;
+    color: var(--background-font-color);
+}
+
+navbar ul {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 13px 0px 13px 0px;
+    font-size: var(--header-size);
+}
+navbar ul li {
+    display: inline-block;
+    padding: 7px 20px 7px 20px;
+}
+navbar ul li :hover {
+    background-color: var(--background-color);
+}
+
+body h3 {
+    color: var(--background-color);
+}
+
+.main_content section {
+    padding: .25em .5em 0em .5em;
+}
+.main_content section p {
+    color: var(--section-text-color);
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    color: var(--background-color);
+    font-weight: bold;
+}
