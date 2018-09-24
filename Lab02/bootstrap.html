@@ -20,17 +20,17 @@
   </head>
 
   <body>
-    <header>
-      <div class="jumbotron">
+      <div class="jumbotron p-3 mb-2 bg-primary text-white sticky-top">
         <h1>Lab 2 - Fall 2018</h1>
-        <hr />
+        <hr class="border border-white" />
         <p>An exercise using Bootstrap 4</p>
       </div>
-    </header>
+      <div class="ol-md-4 text-center">
+        <button type="button" class="btn btn-primary w-25 p-3" onclick="toggleHeader(this);">Hide Header</button>
+      </div>
+
 
     <main role="main" class="container">
-      <div class="container">
-        <!-- Example row of columns -->
         <div class="row">
           <section class="col-xs-12 col-sm-6 col-md-3">
             <h2>Section 1</h2>
@@ -49,7 +49,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           </section>
         </div>
-        <hr />
+        <hr class="border border-primary d-none d-md-block d-lg-block" />
         <div class="row">
           <section class="col-xs-12 col-sm-6 col-md-3">
             <h2>Section 5</h2>
@@ -68,20 +68,17 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           </section>
         </div>
-
-
-      </div>
-      <hr/>
     </main>
 
     <footer>
-      <hr />
+      <hr class="border border-black" />
       <div>CSIS 4135 - Fall 2018</div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./assets/js/bootstrap/main.js"></script>
   </body>
 
   </html>
