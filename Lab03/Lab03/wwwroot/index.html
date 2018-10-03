@@ -17,33 +17,42 @@
     <![endif]-->
 </head>
 <body onload="start();">
-    <main role="main" class="container">
+    <main class="p-3">
         <h2>Beverage Order</h2>
-        <form>
-            <div class="form-row form-inline">
-                <label for="customerName">Customer Name</label>
-                <input type="text" class="form-control mb-2" id="customerName" placeholder="Please enter the customers name" required>
-            </div>
-            <div class="form-row form-inline">
-                <label for="beverage">Beverage</label>
-                <select class="form-control " id="beverage" required>
-                    <option>Coffee</option>
-                    <option>Tea</option>
-                    <option>Beer</option>
-                    <option>Wine</option>
-                </select>
-
-                <label for="quantity">Quantity</label>
-                <input type="number" class="form-control " id="quantity" required>
-            </div>
-            <div class="form-row form-inline">
-                <label for="birthday">Customer's Birthdate</label>
-                <input type="date" class="form-control mb-2" id="customerBirthdate" required />
-            </div>
-            <button type="submit" class="btn btn-primary mb-2" onclick="event.preventDefault(); generateReceipt();">Submit</button>
-        </form>
         <br />
-        <div class="card w-25" id="rec" hidden>
+
+        <form>
+            <div class="form-group row">
+                <label for="CustomerName" class="form-group col-sm-2">Customer Name:</label>
+                <div class="col">
+                    <input type="text" class="form-control col-sm-5" id="customerName" placeholder="Please enter the customers name" required />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="BeverageSelect" class="col-sm-2 col-form-label">Beverage:</label>
+                <div class="col">
+                    <select class="form-control col-sm-8 " id="beverage" required>
+                        <option>Coffee</option>
+                        <option>Tea</option>
+                        <option>Beer</option>
+                        <option>Wine</option>
+                    </select>
+                </div>
+                <label for="Quantity" class="col-2 col-form-label pd-l30">Quantity:</label>
+                <div class="col">
+                    <input type="number" class="form-control  col-sm-5" id="quantity" required />
+                </div>
+            </div>
+            <div class="form-group row" id="Date">
+                <label for="Bday" class="form-group col-sm-2">Birthday:</label>
+                <div class="col">
+                    <input type="date" class="form-control col-sm-5" id="customerBirthdate" required>
+                </div>
+            </div>
+        </form>
+        <button type="button" onclick="generateReceipt();" class="btn btn-success">Submit Order</button>
+        <hr />
+        <div class="card w-50" id="rec" hidden>
             <div class="card-body">
                 <h5 class="card-title">Customer: <span id="rec_customerName"></span></h5>
                 <div>
@@ -55,7 +64,7 @@
             </div>
         </div>
         <br />
-        <div class="card w-25" id="age" hidden>
+        <div class="card w-50" id="age" hidden>
             <div class="card-body">
                 <h5 class="card-title">Must be born before:</h5>
                 <div id="beforeDate"></div>
@@ -64,7 +73,6 @@
                 </div>
             </div>
         </div>
-
     </main>
 
     
