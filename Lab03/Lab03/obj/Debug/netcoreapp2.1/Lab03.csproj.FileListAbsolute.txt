@@ -1,0 +1,14 @@
+/Users/danner/source/GitHub/CSIS4135/Lab03/Lab03/bin/Debug/netcoreapp2.1/Lab03.deps.json
+/Users/danner/source/GitHub/CSIS4135/Lab03/Lab03/bin/Debug/netcoreapp2.1/Lab03.runtimeconfig.json
+/Users/danner/source/GitHub/CSIS4135/Lab03/Lab03/bin/Debug/netcoreapp2.1/Lab03.runtimeconfig.dev.json
+/Users/danner/source/GitHub/CSIS4135/Lab03/Lab03/bin/Debug/netcoreapp2.1/Lab03.dll
+/Users/danner/source/GitHub/CSIS4135/Lab03/Lab03/bin/Debug/netcoreapp2.1/Lab03.pdb
+/Users/danner/source/GitHub/CSIS4135/Lab03/Lab03/obj/Debug/netcoreapp2.1/Lab03.csprojAssemblyReference.cache
+/Users/danner/source/GitHub/CSIS4135/Lab03/Lab03/obj/Debug/netcoreapp2.1/Lab03.csproj.CoreCompileInputs.cache
+/Users/danner/source/GitHub/CSIS4135/Lab03/Lab03/obj/Debug/netcoreapp2.1/Lab03.RazorAssemblyInfo.cache
+/Users/danner/source/GitHub/CSIS4135/Lab03/Lab03/obj/Debug/netcoreapp2.1/Lab03.RazorAssemblyInfo.cs
+/Users/danner/source/GitHub/CSIS4135/Lab03/Lab03/obj/Debug/netcoreapp2.1/Lab03.AssemblyInfoInputs.cache
+/Users/danner/source/GitHub/CSIS4135/Lab03/Lab03/obj/Debug/netcoreapp2.1/Lab03.AssemblyInfo.cs
+/Users/danner/source/GitHub/CSIS4135/Lab03/Lab03/obj/Debug/netcoreapp2.1/Lab03.RazorTargetAssemblyInfo.cache
+/Users/danner/source/GitHub/CSIS4135/Lab03/Lab03/obj/Debug/netcoreapp2.1/Lab03.dll
+/Users/danner/source/GitHub/CSIS4135/Lab03/Lab03/obj/Debug/netcoreapp2.1/Lab03.pdb
