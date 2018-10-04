@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{F963C927-E176-4D8E-B60A-4ECEAE9B0F07}|Default">
   <MonoDevelop.Ide.ItemProperties.Lab03 PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Lab03/wwwroot/assets/css/main.css">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Lab03/wwwroot/index.html">
     <Files>
-      <File FileName="Lab03/wwwroot/index.html" Line="44" Column="28" />
-      <File FileName="Lab03/wwwroot/assets/js/main.js" Line="1" Column="25" />
-      <File FileName="Lab03/wwwroot/assets/css/main.css" Line="14" Column="5" />
+      <File FileName="Lab03/wwwroot/index.html" Line="41" Column="73" />
+      <File FileName="Lab03/wwwroot/assets/js/main.js" Line="40" Column="38" />
+      <File FileName="Lab03/wwwroot/assets/css/main.css" Line="18" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
