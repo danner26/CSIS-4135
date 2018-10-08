@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="WaffleGenerator" Version="3.0.0" />
   </ItemGroup>
 
   <ItemGroup>
