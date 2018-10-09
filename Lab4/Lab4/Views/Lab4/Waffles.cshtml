@@ -1,6 +1,21 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model System.DateTime
+
 @{
     ViewData["Title"] = "Waffles";
+    DateTime now = DateTime.Now;
+    DateTime endOfYear = new DateTime(now.Year, 12, 31);
+
+    double daysLeft = Math.Ceiling((endOfYear - now).TotalDays);
 }
+
+<div class="jumbotron p-3 mb-2 bg-primary text-white sticky-top">
+    <h3>@ViewData["TimePhrase"]</h3>
+</div>
+<main class="p-3">
+    <h2>It is now @now.ToString("hh:mm") @now.ToString("tt") on @now.DayOfWeek, @now.ToString("MMMM") @now.Day, @now.Year</h2>
+    <h5>There are @daysLeft more days in @now.Year</h5>
+
+
+
+    <div>@Html.Raw(System.Web.HttpUtility.HtmlDecode(WaffleGenerator.WaffleEngine.Html(1, true, false)))</div>
+</main>

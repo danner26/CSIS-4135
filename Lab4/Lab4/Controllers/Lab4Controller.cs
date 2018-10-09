@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Web;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WaffleGenerator;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -17,7 +19,6 @@ namespace Lab4.Controllers {
         public IActionResult Waffles() {
             return View("Waffles");
         }
-
 
         public string GetTimePhrase() {
             if (DateTime.Now.Hour < 12) {
