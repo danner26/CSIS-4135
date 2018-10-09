@@ -2,10 +2,10 @@
 
 namespace Lab4.Models
 {
-    public class GetDateModel
+    public class WaffleGeneratorModel
     {
         public string RequestId { get; set; }
 
-        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+
     }
 }

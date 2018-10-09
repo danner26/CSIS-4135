@@ -17,6 +17,8 @@ namespace Lab4.Controllers {
             return View("Index");
         }
         public IActionResult Waffles() {
+            ViewData["TimePhrase"] = GetTimePhrase();
+
             return View("Waffles");
         }
 
