@@ -35,3 +35,26 @@ body {
         display: none;
     }
 }
+
+.panel-body {
+    background: lightblue;
+    border: skyblue;
+}
+
+.panel-body h1 {
+    font-weight: bold;
+}
+
+.panel-default {
+    border-color: skyblue;
+    border-width: 1.5px;
+}
+
+.buttons {
+    padding: 10px;
+    margin: 5px;
+}
+
+#waffle_gen {
+    padding: 10px 0 10px 0;
+}
