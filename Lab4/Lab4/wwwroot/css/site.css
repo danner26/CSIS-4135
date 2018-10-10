@@ -58,3 +58,9 @@ body {
 #waffle_gen {
     padding: 10px 0 10px 0;
 }
+
+.jumbotron {
+    background-color: lightblue;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}

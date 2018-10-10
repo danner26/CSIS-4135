@@ -13,12 +13,9 @@
 }
 
 <div class="jumbotron p-3 mb-2 bg-primary text-white sticky-top">
-    <h3>@ViewData["TimePhrase"]</h3>
+    <h3>Generate Waffles</h3>
 </div>
 <main class="p-3">
-    <h2>It is now @now.ToString("hh:mm") @now.ToString("tt") on @now.DayOfWeek, @now.ToString("MMMM") @now.Day, @now.Year</h2>
-    <h5>There are @daysLeft more days in @now.Year</h5>
-    <a class="btn btn-primary" role="button" href="~/Lab4/Waffles/@(id+1)">Generate Waffle</a>
     <div class="inline-block" id="waffle_gen">
         <a class="btn btn-success" role="button" href="~/Lab4/Waffles/1">1</a>
         <a class="btn btn-success" role="button" href="~/Lab4/Waffles/2">2</a>
