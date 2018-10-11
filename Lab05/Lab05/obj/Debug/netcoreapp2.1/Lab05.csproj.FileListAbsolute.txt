@@ -29,3 +29,4 @@
 /Users/danner/source/GitHub/CSIS4135/Lab05/Lab05/obj/Debug/netcoreapp2.1/Lab05.dll
 /Users/danner/source/GitHub/CSIS4135/Lab05/Lab05/obj/Debug/netcoreapp2.1/Lab05.pdb
 /Users/danner/source/GitHub/CSIS4135/Lab05/Lab05/obj/Debug/netcoreapp2.1/Lab05.csproj.CopyComplete
+/Users/danner/source/GitHub/CSIS4135/Lab05/Lab05/obj/Debug/netcoreapp2.1/Razor/Views/Home/Contact.g.cshtml.cs
