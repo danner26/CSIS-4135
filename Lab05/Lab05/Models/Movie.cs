@@ -18,5 +18,16 @@ namespace lab05.Models
         public string Genre { get; set; }
         [Column(TypeName = "decimal(18, 2)")]
         public decimal Price { get; set; }
+        public string Rating { get; set; }
+    }
+
+    public enum Ratings
+    {
+        NC17,
+        R,
+        PG13,
+        PG,
+        G,
+        NR
     }
 }
