@@ -4,14 +4,15 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Lab05.Models;
+using lab05.Models;
 
-namespace Lab05.Controllers
+namespace lab05.Controllers
 {
     public class HomeController : Controller
     {
         public IActionResult Index()
         {
+            
             return View();
         }
 
