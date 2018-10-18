@@ -16,8 +16,9 @@ namespace lab05.Models
         [Required]
         public string Title { get; set; }
 
-        [Display(Name ="Release Date")]
+        [Display(Name = "Release Date")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MMMM dd, yyyy}")]
         public DateTime ReleaseDate { get; set; }
 
         [Required]
