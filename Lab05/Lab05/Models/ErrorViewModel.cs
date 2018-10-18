@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using System;
 
 namespace Lab05.Models
@@ -8,4 +9,16 @@ namespace Lab05.Models
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
+=======
+using System;
+
+    namespace lab05.Models
+{
+    public class ErrorViewModel
+    {
+        public string RequestId { get; set; }
+
+        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+    }
+>>>>>>> wip
 }
