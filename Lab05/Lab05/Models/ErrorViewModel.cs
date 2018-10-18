@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-using System;
-
-namespace Lab05.Models
-{
-    public class ErrorViewModel
-    {
-        public string RequestId { get; set; }
-
-        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
-    }
-=======
 using System;
 
     namespace lab05.Models
@@ -20,5 +8,4 @@ using System;
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
->>>>>>> wip
 }
