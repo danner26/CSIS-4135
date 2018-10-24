@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Lab06.Models;
+using System.Net.Http;
+using Microsoft.Extensions.Hosting.Internal;
+using Microsoft.Extensions.Configuration;
 
 namespace Lab06.Controllers
 {
@@ -85,6 +88,25 @@ namespace Lab06.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(movie);
+        }
+        
+
+        public async Task<IActionResult> OMDBCreate(string movieName)
+        {
+            if (movieName == null) {
+                ViewData["MovieObject"] = "";
+                return View();
+            } else {
+                //string apikey = iConfig.GetSection("Api_Key").Value;
+
+                HttpClient client = new HttpClient();
+                string url = "http://www.omdbapi.com/?apikey=" + "bace53af" + "&t=" + movieName;
+                var response = await client.GetAsync(url);
+                var data = await response.Content.ReadAsStringAsync();
+
+                ViewData["MovieObject"] = data;
+                return View();
+            }
         }
 
         // GET: Movies/Edit/5
@@ -171,5 +193,7 @@ namespace Lab06.Controllers
         {
             return _context.Movie.Any(e => e.ID == id);
         }
+
+
     }
 }
