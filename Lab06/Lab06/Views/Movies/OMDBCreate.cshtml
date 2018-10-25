@@ -6,6 +6,9 @@
     var movieExists = ViewData["exists"];
 }
 
+<script type="text/javascript">
+
+</script>
 <div class="imdb">
     <form class="form-inline" method="get" action="/Movies/OMDBCreate">
         <div class="form-group">
@@ -78,32 +81,29 @@
 </div>
 
 <script type="text/javascript">
-    if ("@try { omdbMovie["Response"].ToString(); } catch { }" == "False") {
-        document.getElementById("title_error").innerHTML = "No such movie exists!";
-    }
-    
-    switch ("@try { ViewData["Rating"].ToString(); } catch { }") {
+        @if (ViewData["Rating"] == null) { ViewData["Rating"] = "none"; }
+        switch ("@ViewData["Rating"].ToString()") {
         case "NC-17":
             document.getElementById("Rating").options[1].selected = true;
-        break;
+            break;
         case "R":
             document.getElementById("Rating").options[2].selected = true;
-        break;
+            break;
         case "PG-13":
             document.getElementById("Rating").options[3].selected = true;
-        break;
+            break;
         case "PG":
             document.getElementById("Rating").options[4].selected = true;
-        break;
+            break;
         case "G":
             document.getElementById("Rating").options[5].selected = true;
-        break;
-        default:
+            break;
+            default:
             document.getElementById("Rating").options[6].selected = true;
-        break;
-    }
+            break;
+        }
 
-    document.getElementById('title').innerHTML = document.getElementById('movieTitle').value;
+    try { document.getElementById('title').innerHTML = document.getElementById('movieTitle').value; } catch { }
 </script>
 
 @section Scripts {

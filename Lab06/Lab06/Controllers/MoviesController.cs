@@ -119,6 +119,7 @@ namespace Lab06.Controllers
                     movie.ReleaseDate = omdbMovie["Released"];
                     movie.Genre = omdbMovie["Genre"].ToString().Split(',')[0];
                     movie.PosterURL = omdbMovie["Poster"];
+
                     ViewData["Rating"] = omdbMovie["Rated"];
                 }
                 catch
