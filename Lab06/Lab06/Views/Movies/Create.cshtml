@@ -3,7 +3,15 @@
     ViewData["Title"] = "Create";
 }
 
-
+<div class="imdb">
+    <form class="form-inline" method="get" action="/Movies/OMDBCreate">
+        <div class="form-group">
+            <input type="text" name="movieName" class="form-control col-sm-6" placeholder="Title">
+        </div>
+        <input type="submit" value="Lookup on IMDB" class="btn btn-info">
+    </form>
+    <span class="text-danger">"" was not found</span>
+</div>
 <form asp-action="Edit">
     <div class="form-horizontal">
         <h4>Movie</h4>
@@ -47,6 +55,7 @@
                 <span asp-validation-for="Rating" class="text-danger"></span>
             </div>
         </div>
+        <input type="hidden" asp-for="PosterURL" id="PosterURL" name="PosterURL" />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <button type="submit" class="btn btn-primary">Submit</button>

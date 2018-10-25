@@ -7,8 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Lab06.Models;
 using System.Net.Http;
-using Microsoft.Extensions.Hosting.Internal;
-using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Lab06.Controllers
 {
@@ -79,7 +79,7 @@ namespace Lab06.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
+        public async Task<IActionResult> Create([Bind("ID,Title,ReleaseDate,Genre,Price,Rating,PosterURL")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -93,7 +93,7 @@ namespace Lab06.Controllers
 
         public async Task<IActionResult> OMDBCreate(string movieName)
         {
-            if (movieName == null) {
+            if (movieName == null || movieName == "") {
                 ViewData["MovieObject"] = "";
                 return View();
             } else {
@@ -104,9 +104,45 @@ namespace Lab06.Controllers
                 var response = await client.GetAsync(url);
                 var data = await response.Content.ReadAsStringAsync();
 
-                ViewData["MovieObject"] = data;
-                return View();
+                var json = JsonConvert.DeserializeObject(data).ToString();
+                dynamic omdbMovie = JObject.Parse(json);
+
+                ViewData["movie"] = json;
+
+                ViewData["omdbMovie"] = omdbMovie;
+
+                Movie movie = new Movie();
+                try
+                {
+                    movie.Title = omdbMovie["Title"];
+                    movie.ReleaseDate = omdbMovie["Released"];
+                    movie.Genre = omdbMovie["Genre"].ToString().Split(',')[0];
+                    movie.PosterURL = omdbMovie["Poster"];
+                    ViewData["Rating"] = omdbMovie["Rated"];
+                }
+                catch
+                {
+
+                }
+
+                return View(movie);
             }
+        }
+
+        // POST: Movies/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> OMDBCreate([Bind("ID,Title,ReleaseDate,Genre,Price,Rating,PosterURL")] Movie movie)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(movie);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(movie);
         }
 
         // GET: Movies/Edit/5
@@ -130,7 +166,7 @@ namespace Lab06.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,ReleaseDate,Genre,Price,Rating,PosterURL")] Movie movie)
         {
             if (id != movie.ID)
             {

@@ -32,6 +32,9 @@ namespace Lab06.Models
 
         [Required]
         public string Rating { get; set; }
+
+
+        public string PosterURL { get; set; }
     }
 
     public enum Ratings
