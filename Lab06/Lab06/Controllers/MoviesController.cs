@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Lab06.Models;
+using System.Net.Http;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Lab06.Controllers
 {
@@ -76,7 +79,7 @@ namespace Lab06.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
+        public async Task<IActionResult> Create([Bind("ID,Title,ReleaseDate,Genre,Price,Rating,PosterURL")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -84,6 +87,76 @@ namespace Lab06.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            return View(movie);
+        }
+        
+
+        public async Task<IActionResult> OMDBCreate(string movieName)
+        {
+            ViewData["exists"] = "false";
+            if (movieName == null || movieName == "") {
+                ViewData["MovieObject"] = "";
+                return View();
+            } else {
+                //string apikey = iConfig.GetSection("Api_Key").Value;
+
+                HttpClient client = new HttpClient();
+                string url = "http://www.omdbapi.com/?apikey=" + "bace53af" + "&t=" + movieName;
+                var response = await client.GetAsync(url);
+                var data = await response.Content.ReadAsStringAsync();
+
+                var json = JsonConvert.DeserializeObject(data).ToString();
+                dynamic omdbMovie = JObject.Parse(json);
+
+                ViewData["movie"] = json;
+
+                ViewData["omdbMovie"] = omdbMovie;
+
+                Movie movie = new Movie();
+                try
+                {
+                    movie.Title = omdbMovie["Title"];
+                    movie.ReleaseDate = omdbMovie["Released"];
+                    movie.Genre = omdbMovie["Genre"].ToString().Split(',')[0];
+                    movie.PosterURL = omdbMovie["Poster"];
+
+                    ViewData["Rating"] = omdbMovie["Rated"];
+                }
+                catch
+                {
+
+                }
+
+                return View(movie);
+            }
+        }
+
+        // POST: Movies/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> OMDBCreate([Bind("ID,Title,ReleaseDate,Genre,Price,Rating,PosterURL")] Movie movie)
+        {
+            if (ModelState.IsValid)
+            {
+                try {
+                    if (!MovieTitleExists(movie.Title))
+                    {
+                        _context.Add(movie);
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(Index));
+                    } else
+                    {
+                        ViewData["exists"] = "true";
+                    }
+                } catch
+                {
+                    throw;
+                }
+            }
+
+            
             return View(movie);
         }
 
@@ -108,7 +181,7 @@ namespace Lab06.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,ReleaseDate,Genre,Price,Rating,PosterURL")] Movie movie)
         {
             if (id != movie.ID)
             {
@@ -171,5 +244,12 @@ namespace Lab06.Controllers
         {
             return _context.Movie.Any(e => e.ID == id);
         }
+
+        private bool MovieTitleExists(string title)
+        {
+            return _context.Movie.Any(e => e.Title == title);
+        }
+
+
     }
 }
