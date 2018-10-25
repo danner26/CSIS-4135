@@ -14,7 +14,7 @@
     </form>
     <span class="text-danger">"" was not found</span>
 </div>
-<form asp-action="Edit">
+<form asp-action="OMDBCreate">
     <div class="form-horizontal">
         <h4>Movie</h4>
         <hr />
@@ -71,29 +71,29 @@
 </div>
 
 <script type="text/javascript">
-    if ("@omdbMovie["Response"].ToString()" == "False") {
+    if ("@try { omdbMovie["Response"].ToString(); } catch { }" == "False") {
         document.getElementById("title_error").innerHTML = "No such movie exists!";
     }
     
-    switch ("@ViewData["Rating"].ToString()") {
+    switch ("@try { ViewData["Rating"].ToString(); } catch { }") {
         case "NC-17":
             document.getElementById("Rating").options[1].selected = true;
-            break;
+        break;
         case "R":
             document.getElementById("Rating").options[2].selected = true;
-            break;
+        break;
         case "PG-13":
             document.getElementById("Rating").options[3].selected = true;
-            break;
+        break;
         case "PG":
             document.getElementById("Rating").options[4].selected = true;
-            break;
+        break;
         case "G":
             document.getElementById("Rating").options[5].selected = true;
-            break;
+        break;
         default:
             document.getElementById("Rating").options[6].selected = true;
-            break;
+        break;
     }
 </script>
 

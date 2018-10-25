@@ -138,10 +138,20 @@ namespace Lab06.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(movie);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                try {
+                    if (!MovieTitleExists(movie.Title))
+                    {
+                        _context.Add(movie);
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(Index));
+                    }
+                } catch
+                {
+                    throw;
+                }
             }
+
+            
             return View(movie);
         }
 
@@ -228,6 +238,11 @@ namespace Lab06.Controllers
         private bool MovieExists(int id)
         {
             return _context.Movie.Any(e => e.ID == id);
+        }
+
+        private bool MovieTitleExists(string title)
+        {
+            return _context.Movie.Any(e => e.Title == title);
         }
 
 
