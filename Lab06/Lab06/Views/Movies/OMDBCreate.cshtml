@@ -3,6 +3,7 @@
     ViewData["Title"] = "OMDB Create";
 
     dynamic omdbMovie = ViewData["omdbMovie"];
+    var movieExists = ViewData["exists"];
 }
 
 <div class="imdb">
@@ -14,6 +15,12 @@
     </form>
     <span class="text-danger">"" was not found</span>
 </div>
+<div>
+    @if(movieExists == "true")
+    {
+        <h2>'<span id="title"></span>' Already exists!</h2>
+    }
+</div>
 <form asp-action="OMDBCreate">
     <div class="form-horizontal">
         <h4>Movie</h4>
@@ -23,7 +30,7 @@
         <div class="form-group">
             <label asp-for="Title" class="col-md-2 control-label"></label>
             <div class="col-md-3">
-                <input asp-for="Title" class="form-control" />
+                <input asp-for="Title" class="form-control" id="movieTitle" />
                 <span asp-validation-for="Title" class="text-danger" id="title_error"></span>
             </div>
         </div>
@@ -95,6 +102,8 @@
             document.getElementById("Rating").options[6].selected = true;
         break;
     }
+
+    document.getElementById('title').innerHTML = document.getElementById('movieTitle').value;
 </script>
 
 @section Scripts {

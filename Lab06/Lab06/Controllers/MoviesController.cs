@@ -93,6 +93,7 @@ namespace Lab06.Controllers
 
         public async Task<IActionResult> OMDBCreate(string movieName)
         {
+            ViewData["exists"] = "false";
             if (movieName == null || movieName == "") {
                 ViewData["MovieObject"] = "";
                 return View();
@@ -144,6 +145,9 @@ namespace Lab06.Controllers
                         _context.Add(movie);
                         await _context.SaveChangesAsync();
                         return RedirectToAction(nameof(Index));
+                    } else
+                    {
+                        ViewData["exists"] = "true";
                     }
                 } catch
                 {
