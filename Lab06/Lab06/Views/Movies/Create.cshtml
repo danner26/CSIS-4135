@@ -3,6 +3,8 @@
     ViewData["Title"] = "Create";
 }
 
+<h3>Add Movie</h3>
+<hr />
 <div class="imdb">
     <form class="form-inline" method="get" action="/Movies/OMDBCreate">
         <div class="form-group">
@@ -10,12 +12,9 @@
         </div>
         <input type="submit" value="Lookup on IMDB" class="btn btn-info">
     </form>
-    <span class="text-danger">"" was not found</span>
 </div>
 <form asp-action="Edit">
     <div class="form-horizontal">
-        <h4>Movie</h4>
-        <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <input type="hidden" asp-for="ID" />
         <div class="form-group">
