@@ -174,7 +174,7 @@ WriteAttributeValue("", 1076, Html.DisplayFor(model => model.PosterURL), 1076, 4
             WriteLiteral(" class=\"img-responsive\" />\r\n        </dd>\r\n    </dl>\n</div>\n<div>\n    ");
             EndContext();
             BeginContext(1189, 54, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "25294f09d9044b2cac8b96840f82077d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7fdfad430c314c0896c58cd1621cc48a", async() => {
                 BeginContext(1235, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -209,7 +209,7 @@ WriteAttributeValue("", 1076, Html.DisplayFor(model => model.PosterURL), 1076, 4
             WriteLiteral(" |\n    ");
             EndContext();
             BeginContext(1250, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "598ac353060e4edbacf94a5ed1316009", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f1c3011df7e743849cf7286bac9289c7", async() => {
                 BeginContext(1272, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();
