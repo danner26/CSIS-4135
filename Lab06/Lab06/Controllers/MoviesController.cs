@@ -65,6 +65,8 @@ namespace Lab06.Controllers
                 return NotFound();
             }
 
+            ViewData["Reviews"] = new SelectList(_context.Review.OrderByDescending(r => r.MovieID).ToList(), "ID", "MovieID");
+
             return View(movie);
         }
 

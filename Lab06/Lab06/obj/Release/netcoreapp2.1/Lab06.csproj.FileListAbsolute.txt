@@ -37,3 +37,8 @@ X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Lab06.Views.pdb
 X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Lab06.dll
 X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Lab06.pdb
 X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Lab06.csproj.CopyComplete
+X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Razor\Views\Reviews\Create.g.cshtml.cs
+X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Razor\Views\Reviews\Delete.g.cshtml.cs
+X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Razor\Views\Reviews\Details.g.cshtml.cs
+X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Razor\Views\Reviews\Edit.g.cshtml.cs
+X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Razor\Views\Reviews\Index.g.cshtml.cs

@@ -1,11 +1,9 @@
 ﻿@model Lab06.Models.Movie
-
 @{
     ViewData["Title"] = "Details";
+    var reviews = (SelectList)ViewData["Reviews"];
 }
-
 <h2>Details</h2>
-
 <div>
     <h4>Movie</h4>
     <hr />
@@ -51,3 +49,26 @@
     <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+<h3 class="bold">Reviews</h3>
+<hr>
+
+@foreach (var item in reviews.)
+{
+    <div class="row">
+        <div class="col-sm-4">
+            <p>@item</p>
+            <em>- TEST</em>
+        </div>
+        <div class="col-sm-2">
+            <span class="btn-group" role="group">
+                <a class="btn btn-sm btn-outline-info" href="/Reviews/Edit/5">Edit</a>
+                <a class="btn btn-sm btn-outline-info" href="/Reviews/Delete/5">Delete</a>
+            </span>
+        </div>
+    </div>
+}
+    <div class="spaceabove">
+        <a class="btn btn-lg btn-info" href="/Reviews/Create/@Html.DisplayFor(model => model.ID)"><span class="glyphicon glyphicon-pencil"></span> Write a Review</a>
+    </div>
+
+    <hr>

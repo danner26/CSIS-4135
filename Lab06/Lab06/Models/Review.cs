@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
 
 
 namespace Lab06.Models
@@ -18,10 +13,10 @@ namespace Lab06.Models
 
         [StringLength(120, MinimumLength = 20, ErrorMessage = "Your review must have at least 20 characters.")]
         [Required]
-        public string userReview { get; set; }
+        public string UserReview { get; set; }
 
         [Required]
-        public int movieID { get; set; }
+        public int MovieID { get; set; }
 
     }
 }
