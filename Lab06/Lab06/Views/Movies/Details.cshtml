@@ -1,7 +1,7 @@
 ﻿@model Lab06.Models.Movie
 @{
     ViewData["Title"] = "Details";
-    var reviews = (SelectList)ViewData["Reviews"];
+    var reviews = ViewData["Reviews"];
 }
 <h2>Details</h2>
 <div>
@@ -52,23 +52,23 @@
 <h3 class="bold">Reviews</h3>
 <hr>
 
-@foreach (var item in reviews.)
-{
+
     <div class="row">
         <div class="col-sm-4">
-            <p>@item</p>
+            <p></p>
             <em>- TEST</em>
         </div>
         <div class="col-sm-2">
             <span class="btn-group" role="group">
-                <a class="btn btn-sm btn-outline-info" href="/Reviews/Edit/5">Edit</a>
-                <a class="btn btn-sm btn-outline-info" href="/Reviews/Delete/5">Delete</a>
+                <a class="btn btn-sm btn-outline-info" href="/Reviews/Edit/@Html.DisplayFor(model => model.ID)">Edit</a>
+                <a class="btn btn-sm btn-outline-info" href="/Reviews/Delete/@Html.DisplayFor(model => model.ID)">Delete</a>
             </span>
         </div>
     </div>
-}
-    <div class="spaceabove">
-        <a class="btn btn-lg btn-info" href="/Reviews/Create/@Html.DisplayFor(model => model.ID)"><span class="glyphicon glyphicon-pencil"></span> Write a Review</a>
-    </div>
 
-    <hr>
+
+<div class="spaceabove">
+    <a class="btn btn-lg btn-info" href="/Reviews/Create/@Html.DisplayFor(model => model.ID)"><span class="glyphicon glyphicon-pencil"></span> Write a Review</a>
+</div>
+
+<hr>

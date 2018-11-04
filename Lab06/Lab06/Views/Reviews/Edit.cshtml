@@ -23,13 +23,14 @@
                 <input asp-for="UserReview" class="form-control" />
                 <span asp-validation-for="UserReview" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" hidden>
                 <label asp-for="MovieID" class="control-label"></label>
                 <input asp-for="MovieID" class="form-control" />
                 <span asp-validation-for="MovieID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
+                <a class="btn btn-outline-info" href="/Movies/Details/@Html.DisplayFor(model => model.MovieID)">Back to Movie Details</a>
             </div>
         </form>
     </div>

@@ -18,6 +18,7 @@ namespace Lab06.Controllers
         // GET: Reviews
         public async Task<IActionResult> Index()
         {
+
             return View(await _context.Review.ToListAsync());
         }
 
