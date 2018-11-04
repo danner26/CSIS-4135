@@ -18,6 +18,13 @@ namespace Lab06.Controllers
         // GET: Reviews
         public async Task<IActionResult> Index()
         {
+            var movies = from m in _context.Movie
+                                         select m;
+
+            var movieGenreVM = new MovieGenreViewModel();
+            movieGenreVM.Movies = await movies.ToListAsync();
+
+            ViewData["Movies"] = movieGenreVM;
 
             return View(await _context.Review.ToListAsync());
         }
@@ -39,10 +46,12 @@ namespace Lab06.Controllers
 
             return View(review);
         }
-
-        // GET: Reviews/Create
-        public IActionResult Create()
+        
+        // GET: Reviews/Create/1
+        public IActionResult Create(int? id)
         {
+            if (id == null) { id = 0; }
+            ViewData["thisMovieID"] = id;
             return View();
         }
 

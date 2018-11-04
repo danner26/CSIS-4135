@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
+    var movies = ViewData["Movies"];
 }
 
 <h2>Index</h2>
@@ -29,7 +30,7 @@
                 @Html.DisplayFor(modelItem => item.UserReview)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MovieID)
+                
             </td>
         </tr>
 }
