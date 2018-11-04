@@ -32,6 +32,8 @@ namespace Lab06.Models
 
 
         public string PosterURL { get; set; }
+
+        public virtual Review Review { get; set; }
     }
 
     public enum Ratings

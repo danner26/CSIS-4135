@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace Lab06.Models
@@ -21,4 +22,5 @@ namespace Lab06.Models
         [Required]
         public string MovieTitle { get; set; }
     }
+    
 }
