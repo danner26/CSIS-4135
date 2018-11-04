@@ -114,7 +114,7 @@ namespace Lab06.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Reviewer,UserReview,MovieID")] Review review)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Reviewer,UserReview,MovieID,MovieTitle")] Review review)
         {
             if (id != review.ID)
             {
