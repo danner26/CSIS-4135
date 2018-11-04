@@ -15,18 +15,39 @@ namespace Lab06.Controllers
             _context = context;
         }
 
+
         // GET: Reviews
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortby, string direction)
         {
-            var movies = from m in _context.Movie
-                                         select m;
+            if (sortby == null && direction == null)
+            {
+                return View(await _context.Review.ToListAsync());
+            }
+            //var movies = from m in _context.Movie
+            //             select m;
 
-            var movieGenreVM = new MovieGenreViewModel();
-            movieGenreVM.Movies = await movies.ToListAsync();
+            //var movieGenreVM = new MovieGenreViewModel();
+            //movieGenreVM.Movies = await movies.ToListAsync();
 
-            ViewData["Movies"] = movieGenreVM;
+            //ViewData["Movies"] = movieGenreVM;
+            var reviews = await _context.Review.OrderBy(r => r.Reviewer).ToListAsync();
+            if (sortby == "reviewer" && direction == "desc")
+            { //descending sort by reviewer
+                reviews = await _context.Review.OrderByDescending(r => r.Reviewer).ToListAsync();
+            } else if (sortby == "movie" && direction == "asc")
+            { //ascending sort by movie title
+                reviews = await _context.Review.OrderBy(r => r.MovieTitle).ToListAsync();
+            } else if (sortby == "movie" && direction == "desc")
+            { //descending sort by movie title
+                reviews = await _context.Review.OrderByDescending(r => r.MovieTitle).ToListAsync();
+            } else
+            { //ascending sort by reviewer
+                reviews = await _context.Review.OrderBy(r => r.Reviewer).ToListAsync();
+            }
 
-            return View(await _context.Review.ToListAsync());
+
+
+            return View(reviews);
         }
 
         // GET: Reviews/Details/5
@@ -48,10 +69,11 @@ namespace Lab06.Controllers
         }
         
         // GET: Reviews/Create/1
-        public IActionResult Create(int? id)
+        public IActionResult Create(int? id, string movieTitle)
         {
             if (id == null) { id = 0; }
             ViewData["thisMovieID"] = id;
+            ViewData["thisMovieTitle"] = movieTitle;
             return View();
         }
 
@@ -60,7 +82,7 @@ namespace Lab06.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Reviewer,UserReview,MovieID")] Review review)
+        public async Task<IActionResult> Create([Bind("Reviewer,UserReview,MovieID, MovieTitle")] Review review)
         {
             if (ModelState.IsValid)
             {

@@ -17,5 +17,8 @@ namespace Lab06.Models
 
         [Required]
         public int MovieID { get; set; }
+
+        [Required]
+        public string MovieTitle { get; set; }
     }
 }
