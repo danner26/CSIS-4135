@@ -82,6 +82,8 @@ namespace Lab06.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction($"Details{"/" + review.MovieID}", "Movies");
             }
+            ViewData["thisMovieID"] = review.MovieID;
+            ViewData["thisMovieTitle"] = review.MovieTitle;
             return View(review);
         }
 
@@ -133,6 +135,8 @@ namespace Lab06.Controllers
                 }
                 return RedirectToAction($"Details{"/" + review.MovieID}", "Movies");
             }
+            ViewData["thisMovieID"] = review.MovieID;
+            ViewData["thisMovieTitle"] = review.MovieTitle;
             return View(review);
         }
 
