@@ -21,7 +21,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="UserReview" class="control-label">Comment</label>
-                <input asp-for="UserReview" class="form-control" />
+                <textarea asp-for="UserReview" class="form-control" id="Comment" name="UserReview"></textarea>
                 <span asp-validation-for="UserReview" class="text-danger"></span>
             </div>
             <div class="form-group" hidden>
