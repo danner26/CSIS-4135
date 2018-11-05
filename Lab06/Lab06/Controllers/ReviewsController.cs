@@ -23,13 +23,7 @@ namespace Lab06.Controllers
             {
                 return View(await _context.Review.ToListAsync());
             }
-            //var movies = from m in _context.Movie
-            //             select m;
-
-            //var movieGenreVM = new MovieGenreViewModel();
-            //movieGenreVM.Movies = await movies.ToListAsync();
-
-            //ViewData["Movies"] = movieGenreVM;
+            
             var reviews = await _context.Review.OrderBy(r => r.Reviewer).ToListAsync();
             if (sortby == "reviewer" && direction == "desc")
             { //descending sort by reviewer
@@ -44,9 +38,7 @@ namespace Lab06.Controllers
             { //ascending sort by reviewer
                 reviews = await _context.Review.OrderBy(r => r.Reviewer).ToListAsync();
             }
-
-
-
+            
             return View(reviews);
         }
 
@@ -82,13 +74,13 @@ namespace Lab06.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Reviewer,UserReview,MovieID, MovieTitle")] Review review)
+        public async Task<IActionResult> Create([Bind("Reviewer,UserReview,MovieID,MovieTitle")] Review review)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(review);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction($"Details{"/" + review.MovieID}", "Movies");
             }
             return View(review);
         }
@@ -139,7 +131,7 @@ namespace Lab06.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction($"Details{"/" + review.MovieID}", "Movies");
             }
             return View(review);
         }
@@ -170,7 +162,7 @@ namespace Lab06.Controllers
             var review = await _context.Review.FindAsync(id);
             _context.Review.Remove(review);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction($"Details{"/" + review.MovieID}", "Movies");
         }
 
         private bool ReviewExists(int id)

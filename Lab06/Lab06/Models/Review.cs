@@ -12,7 +12,7 @@ namespace Lab06.Models
         [Required]
         public string Reviewer { get; set; }
 
-        [StringLength(120, MinimumLength = 20, ErrorMessage = "Your review must have at least 20 characters.")]
+        [StringLength(1500, MinimumLength = 20, ErrorMessage = "Your review must have at least 20 characters.")]
         [Required]
         public string UserReview { get; set; }
 

@@ -57,12 +57,12 @@
     <div class="row">
         <div class="col-sm-4">
             <p>@review.UserReview</p>
-            <em>@review.Reviewer</em>
+            <em>- @review.Reviewer</em>
         </div>
         <div class="col-sm-2">
             <span class="btn-group" role="group">
-                <a class="btn btn-sm btn-outline-info" href="/Reviews/Edit/@review.ID">Edit</a>
-                <a class="btn btn-sm btn-outline-info" href="/Reviews/Delete/@review.ID">Delete</a>
+                <a class="btn btn-sm btn-outline-info btn btn-default" href="/Reviews/Edit/@review.ID" >Edit</a>
+                <a class="btn btn-sm btn-outline-info btn btn-default" href="/Reviews/Delete/@review.ID">Delete</a>
             </span>
         </div>
     </div>
@@ -71,5 +71,3 @@
 <div class="spaceabove">
     <a class="btn btn-lg btn-info" href="/Reviews/Create/@Html.DisplayFor(model => model.ID)?movieTitle=@Html.DisplayFor(model => model.Title)"><span class="glyphicon glyphicon-pencil"></span> Write a Review</a>
 </div>
-
-<hr>
