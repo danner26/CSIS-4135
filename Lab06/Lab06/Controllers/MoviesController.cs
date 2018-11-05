@@ -65,32 +65,14 @@ namespace Lab06.Controllers
                 return NotFound();
             }
 
-            //ViewData["Reviews"] = _context.Review.Where(r => r.MovieID == id.Value).Select(re => new SelectListItem
-            //{
-            //    Text = re.Reviewer,
-            //    Value = re.UserReview
-            //});
-
-            //Console.WriteLine(id);
-
-            // Use LINQ to get list of genres.
-            IQueryable<string> reviews = from r in _context.Review
-                                            select r.Reviewer;
-
             var reviewData = from r in _context.Review select r;
 
             if (id != null)
             {
                 reviewData = reviewData.Where(x => x.MovieID == id);
             }
-
-
-            var reviewVM = new ReviewViewModel
-            {
-                ReviewerName = await reviewData.ToListAsync()
-            };
-            ViewData["Reviews"] = reviewVM;
-            System.Diagnostics.Debug.WriteLine(reviewVM);
+            
+            ViewData["Reviews"] = await reviewData.ToListAsync();
 
             return View(movie);
         }

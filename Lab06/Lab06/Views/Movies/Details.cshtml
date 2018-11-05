@@ -1,7 +1,7 @@
 ﻿@model Lab06.Models.Movie
 @{
     ViewData["Title"] = "Details";
-    var reviews = ViewData["Reviews"];
+    List<Review> reviews = (List<Review>)ViewData["Reviews"];
 }
 <h2>Details</h2>
 <div>
@@ -52,20 +52,21 @@
 <h3 class="bold">Reviews</h3>
 <hr>
 
-
+@foreach (Review review in reviews)
+{
     <div class="row">
         <div class="col-sm-4">
-            <p></p>
-            <em>- TEST</em>
+            <p>@review.UserReview</p>
+            <em>@review.Reviewer</em>
         </div>
         <div class="col-sm-2">
             <span class="btn-group" role="group">
-                <a class="btn btn-sm btn-outline-info" href="/Reviews/Edit/@Html.DisplayFor(model => model.ID)">Edit</a>
-                <a class="btn btn-sm btn-outline-info" href="/Reviews/Delete/@Html.DisplayFor(model => model.ID)">Delete</a>
+                <a class="btn btn-sm btn-outline-info" href="/Reviews/Edit/@review.ID">Edit</a>
+                <a class="btn btn-sm btn-outline-info" href="/Reviews/Delete/@review.ID">Delete</a>
             </span>
         </div>
     </div>
-
+}
 
 <div class="spaceabove">
     <a class="btn btn-lg btn-info" href="/Reviews/Create/@Html.DisplayFor(model => model.ID)?movieTitle=@Html.DisplayFor(model => model.Title)"><span class="glyphicon glyphicon-pencil"></span> Write a Review</a>
