@@ -65,6 +65,15 @@ namespace Lab06.Controllers
                 return NotFound();
             }
 
+            var reviewData = from r in _context.Review select r;
+
+            if (id != null)
+            {
+                reviewData = reviewData.Where(x => x.MovieID == id);
+            }
+            
+            ViewData["Reviews"] = await reviewData.ToListAsync();
+
             return View(movie);
         }
 

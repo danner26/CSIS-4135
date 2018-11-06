@@ -4,14 +4,16 @@ using Lab06.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Lab06.Migrations
 {
     [DbContext(typeof(Lab06Context))]
-    partial class Lab06ContextModelSnapshot : ModelSnapshot
+    [Migration("20181105001245_ExtendReviewLength")]
+    partial class ExtendReviewLength
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,11 +67,22 @@ namespace Lab06.Migrations
 
                     b.Property<string>("UserReview")
                         .IsRequired()
-                        .HasMaxLength(1500);
+                        .HasMaxLength(2000);
 
                     b.HasKey("ID");
 
+                    b.HasIndex("MovieID")
+                        .IsUnique();
+
                     b.ToTable("Review");
+                });
+
+            modelBuilder.Entity("Lab06.Models.Review", b =>
+                {
+                    b.HasOne("Lab06.Models.Movie")
+                        .WithOne("Review")
+                        .HasForeignKey("Lab06.Models.Review", "MovieID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

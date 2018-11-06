@@ -25,6 +25,11 @@ X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Razor\Views\Movies\Deta
 X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Razor\Views\Movies\Edit.g.cshtml.cs
 X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Razor\Views\Movies\Index.g.cshtml.cs
 X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Razor\Views\Movies\OMDBCreate.g.cshtml.cs
+X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Razor\Views\Reviews\Create.g.cshtml.cs
+X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Razor\Views\Reviews\Delete.g.cshtml.cs
+X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Razor\Views\Reviews\Details.g.cshtml.cs
+X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Razor\Views\Reviews\Edit.g.cshtml.cs
+X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Razor\Views\Reviews\Index.g.cshtml.cs
 X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
 X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
 X:\GitHub\CSIS4135\Lab06\Lab06\obj\Release\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
