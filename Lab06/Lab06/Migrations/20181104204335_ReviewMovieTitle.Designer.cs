@@ -4,14 +4,16 @@ using Lab06.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Lab06.Migrations
 {
     [DbContext(typeof(Lab06Context))]
-    partial class Lab06ContextModelSnapshot : ModelSnapshot
+    [Migration("20181104204335_ReviewMovieTitle")]
+    partial class ReviewMovieTitle
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,8 +58,7 @@ namespace Lab06.Migrations
 
                     b.Property<int>("MovieID");
 
-                    b.Property<string>("MovieTitle")
-                        .IsRequired();
+                    b.Property<int>("MovieTitle");
 
                     b.Property<string>("Reviewer")
                         .IsRequired()
@@ -65,7 +66,7 @@ namespace Lab06.Migrations
 
                     b.Property<string>("UserReview")
                         .IsRequired()
-                        .HasMaxLength(1500);
+                        .HasMaxLength(120);
 
                     b.HasKey("ID");
 

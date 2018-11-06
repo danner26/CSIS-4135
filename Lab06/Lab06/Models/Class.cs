@@ -12,4 +12,10 @@ namespace Lab06.Models
         public SelectList Genres;
         public string MovieGenre { get; set; }
     }
+
+    public class ReviewViewModel
+    {
+        public List<Lab06.Models.Review> ReviewerName { get; set; }
+        public List<String> ReviewBody { get; set; }
+    }
 }
