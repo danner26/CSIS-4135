@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <div>Friend Ship</div>
+
+  <div flex class="fill-space">
+    <button aria-label="matches" mat-button><a href="#" class="nav-link">Matches</a></button>
+    <button aria-label="friends" mat-button><a href="#" class="nav-link">Friend Lists</a></button>
+  </div>
+
+  <div class="login-container">
+    <form class="loginForm">
+      <mat-form-field class="full-width spacing">
+        <input matInput placeholder="User Name" />
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Password" />
+      </mat-form-field>
+      <button mat-fab>Login</button>
+    </form>
+    <div class="ham-container" onclick="animateMenu(this)">
+      <div class="menubar1"></div>
+      <div class="menubar2"></div>
+      <div class="menubar3"></div>
+    </div>
+  </div>
+  
+</mat-toolbar>

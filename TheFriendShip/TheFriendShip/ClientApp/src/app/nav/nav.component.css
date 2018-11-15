@@ -1,0 +1,55 @@
+.fill-space {
+  flex: 1 1 auto;
+  min-width: 35%;
+  max-width: 70%;
+}
+.nav-link {
+  text-decoration: none;
+  color: white;
+}
+.loginForm {
+  min-width: 50px;
+  max-width: 150px;
+  width: 100%;
+}
+.full-width {
+  width: 100%;
+}
+.login-container {
+  display: flex;
+  flex-direction: row;
+}
+.spacing {
+  padding-right: 10px;
+}
+
+
+.ham-container {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.menubar1, .menubar2, .menubar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .menubar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+/* Fade out the second bar */
+.change .menubar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .menubar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
