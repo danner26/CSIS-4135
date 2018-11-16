@@ -1,28 +1,57 @@
-<mat-toolbar color="primary" class="toolbar">
-  <div>Friend Ship</div>
+<div style="height: 100vh;">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
 
-  <div flex class="fill-space">
-    <button aria-label="matches" mat-button><a href="#" class="nav-link">Matches</a></button>
-    <button aria-label="friends" mat-button><a href="#" class="nav-link">Friend Lists</a></button>
-  </div>
+      <span>Friend Ship</span>
+      <span class="example-spacer"></span>
+      <div fxShow="true" fxHide.lt-md="true">
+        <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+        <a href="#" mat-button>
+          Matches
+        </a>
+        <a href="#" mat-button>
+          Friend lists
+        </a>
+      </div>
+      <!-- This fills the remaining space of the current row -->
+      <span class="fill-remaining-space"></span>
+      <div class="login-field" fxShow="true" fxHide.lt-md="true">
+        <mat-form-field class="usrpwd">
+          <input matInput placeholder="User Name" />
+        </mat-form-field>
 
-  <div>
-    <div class="loginForm">
-      <mat-form-field>
-        <input matInput class="loginInput spacing" placeholder="User Name" />
-      </mat-form-field>
-
-      <mat-form-field>
-        <input matInput class="loginInput" placeholder="Password" />
-      </mat-form-field>
-      <button class="loginInput" mat-button>Login</button>
-    </div>
+        <mat-form-field class="usrpwd">
+          <input matInput placeholder="Password" />
+        </mat-form-field>
+        <button class="loginInput" mat-button>Login</button>
+      </div>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar-row>
     
-    <div class="ham-container" onclick="animateMenu(this)" style="display: none;">
-      <div class="menubar1"></div>
-      <div class="menubar2"></div>
-      <div class="menubar3"></div>
-    </div>
-  </div>
-  
-</mat-toolbar>
+
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav position="end">
+      <mat-nav-list>
+        <a href="#" mat-list-item>
+          Notifications
+        </a>
+        <a href="#" mat-list-item>
+          Messages
+        </a>
+        <a href="#" mat-list-item>
+          My Account
+        </a>
+        <a href="#" mat-list-item>
+          My Account
+        </a>
+        <a (click)="sidenav.toggle()" mat-list-item>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill></mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

@@ -1,19 +1,26 @@
 .toolbar {
   overflow: hidden;
 }
-.fill-space {
+
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
   flex: 1 1 auto;
 }
+
+.usrpwd{
+  font-size: 12px;
+  
+}
+
+.mat-button, .mat-icon-button, .mat-stroked-button {
+  outline: thin;
+  outline-color: white;
+}
+
 .nav-link {
   text-decoration: none;
   color: white;
-}
-.loginForm {
-  display: flex;
-  flex-direction: row;
-}
-.spacing {
-  padding-right: 15px;
 }
 
 .ham-container {
@@ -22,7 +29,7 @@
 }
 
 .menubar1, .menubar2, .menubar3 {
-  width: 35px;
+  width: 5px;
   height: 5px;
   background-color: #333;
   margin: 6px 0;
