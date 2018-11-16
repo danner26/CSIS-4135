@@ -1,7 +1,5 @@
 import { MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatMenuModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { LayoutModule } from '@angular/cdk/layout';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
