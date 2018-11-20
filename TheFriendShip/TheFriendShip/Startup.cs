@@ -35,7 +35,7 @@ namespace TheFriendShip
             services.AddDbContext<TFS_UserContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("TFS_UserContext")));
 
-            services.AddIdentity<Users, IdentityRole>()
+            services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<TFS_UserContext>();
         }
 

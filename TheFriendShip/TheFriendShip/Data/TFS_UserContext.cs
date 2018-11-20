@@ -13,6 +13,6 @@ namespace TheFriendShip.Data
         {
         }
 
-    public DbSet<Models.Users> Review { get; set; }
+    public DbSet<Models.User> Review { get; set; }
 }
 }
