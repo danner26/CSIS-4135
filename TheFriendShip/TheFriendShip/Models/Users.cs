@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TheFriendShip.Models
 {
-    public class User : IdentityUser
+    public class Users : IdentityUser
     {
     }
 }

@@ -1,10 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TheFriendShip.Data;
+using TheFriendShip.Models;
 
 namespace TheFriendShip
 {
@@ -27,6 +31,12 @@ namespace TheFriendShip
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddDbContext<TFS_UserContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("TFS_UserContext")));
+
+            services.AddIdentity<Users, IdentityRole>()
+                .AddEntityFrameworkStores<TFS_UserContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
