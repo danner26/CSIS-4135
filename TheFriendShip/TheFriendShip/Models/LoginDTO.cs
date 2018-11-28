@@ -4,6 +4,6 @@ namespace TheFriendShip.Models
 {
     internal class LoginDTO
     {
-        public ClaimsIdentity UserName { get; internal set; }
+        public string UserName { get; internal set; }
     }
 }
