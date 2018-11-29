@@ -34,7 +34,7 @@ namespace TheFriendShip.Controllers
                 if (result.Succeeded)
                 {
                     var userToken = BuildToken(user);
-                    return Ok(Newtonsoft.Json.JsonConvert.SerializeObject(userToken));
+                    return Ok(Newtonsoft.Json.JsonConvert.SerializeObject(new { userToken, user.UserName }));
                 }
                 else
                 {

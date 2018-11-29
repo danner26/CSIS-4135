@@ -1,14 +1,3 @@
-<!--<form class="ui-login" id="loginForm" fxShow="true" fxHide.lt-md="true" action="/api/auth/login" method="post">
-  <mat-form-field class="usrpwd">
-    <input name="username" matInput placeholder="Username">
-  </mat-form-field>
-
-  <mat-form-field class="usrpwd">
-    <input name="password" matInput placeholder="Password">
-  </mat-form-field>
-
-  <button class="loginInput" id="submit" mat-button>Login</button>
-</form>-->
 <form (submit)="submit(myform)" #myform="ngForm">
   <mat-form-field class="usrpwd">
     <input placeholder="User name" name="username" [(ngModel)]="model.username" matInput required />
