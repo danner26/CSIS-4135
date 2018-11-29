@@ -11,11 +11,11 @@
 </form>-->
 <form (submit)="submit(myform)" #myform="ngForm">
   <mat-form-field class="usrpwd">
-    <input placeholder="User name" name="username" [(ngModel)]="model.username" required>
+    <input placeholder="User name" name="username" [(ngModel)]="model.username" matInput required />
   </mat-form-field>
 
   <mat-form-field class="usrpwd">
-    <input type="password" placeholder="Password" name="password" [(ngModel)]="model.password" required />
+    <input type="password" placeholder="Password" name="password" [(ngModel)]="model.password" matInput required />
   </mat-form-field>
   
   <button class="loginInput" id="submit" mat-button>Login</button>
