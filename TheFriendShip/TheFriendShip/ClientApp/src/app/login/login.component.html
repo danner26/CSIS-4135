@@ -1,4 +1,4 @@
-<form (submit)="submit(myform)" #myform="ngForm">
+<form (submit)="submit(myform)" #myform="ngForm" fxShow="true" fxHide.lt-md="true">
   <mat-form-field class="usrpwd">
     <input placeholder="User name" name="username" [(ngModel)]="model.username" matInput required />
   </mat-form-field>
