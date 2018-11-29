@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using TheFriendShip.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Security;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using TheFriendShip.Data;
+
 
 namespace TheFriendShip.Controllers
 {
@@ -37,7 +34,7 @@ namespace TheFriendShip.Controllers
                 if (result.Succeeded)
                 {
                     var userToken = BuildToken(user);
-                    return Ok("Login succeeded" + "    " + userToken);
+                    return Ok(Newtonsoft.Json.JsonConvert.SerializeObject(userToken));
                 }
                 else
                 {
