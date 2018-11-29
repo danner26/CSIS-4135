@@ -1,5 +1,5 @@
-<div style="height: 100vh;">
-  <mat-toolbar color="primary">
+<div class="nav-container" [class.nav-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="nav-toolbar">
     <mat-toolbar-row>
 
       <span>Friend Ship</span>
@@ -20,11 +20,11 @@
         <mat-icon>menu</mat-icon>
       </button>
     </mat-toolbar-row>
-    
+
 
   </mat-toolbar>
 
-  <mat-sidenav-container fxFlexFill>
+  <mat-sidenav-container class="nav-side-container" fxFlexFill>
     <mat-sidenav #sidenav position="end">
       <mat-nav-list>
         <a href="#" mat-list-item>
@@ -38,6 +38,8 @@
         </a>
       </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content fxFlexFill></mat-sidenav-content>
+    <mat-sidenav-content fxFlexFill>
+      <app-home></app-home>
+    </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
