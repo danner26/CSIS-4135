@@ -1,0 +1,16 @@
+<form (submit)="submit(myform)" #myform="ngForm">
+  <mat-form-field>
+    <input placeholder="User name" name="username" matInput required />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input placeholder="Password" name="password" matInput required />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input placeholder="Confirm Password" name="confirm-password" matInput required />
+  </mat-form-field>
+
+  <button type="submit" class="loginInput" id="submit" mat-raised-button color="primary">REGISTER</button>
+  <button type="reset" class="loginInput" id="reset" mat-raised-button color="primary">CLEAR</button>
+</form>

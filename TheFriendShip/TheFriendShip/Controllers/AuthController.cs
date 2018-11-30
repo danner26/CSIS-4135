@@ -61,7 +61,7 @@ namespace TheFriendShip.Controllers
 
             if (result.Succeeded)
             {
-                return Ok(new { Msg = "Registration succeeded", User = newUser.UserName, ID = newUser.Id });
+                return Ok(new { result.Succeeded, Msg = "Registration succeeded", User = newUser.UserName, ID = newUser.Id });
             }
             return BadRequest(result);
 

@@ -4,11 +4,12 @@ import { Form } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
+
   model = new User();
   constructor(private authService: AuthService) { }
 
@@ -19,9 +20,8 @@ export class LoginComponent implements OnInit {
     console.log('Submitted');
 
     //this.http.post('/api/auth/login', this.model).subscribe(status => console.log(status));
-    this.authService.login(this.model.username, this.model.password).subscribe(user => console.log(user));
+    this.authService.register(this.model.username, this.model.password).subscribe(user => console.log(user));
     
     console.log(form);
   }
-
 }
