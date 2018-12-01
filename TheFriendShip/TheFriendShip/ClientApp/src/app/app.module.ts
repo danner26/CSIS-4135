@@ -16,7 +16,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 
 export function tokenGetter() {
-  return localStorage.getItem('access_token');
+  return localStorage.getItem('token');
 }
 
 @NgModule({
@@ -39,7 +39,6 @@ export function tokenGetter() {
       config: {
         tokenGetter: tokenGetter,
         whitelistedDomains: ['localhost:*', 'https://thefriendshipannerd.azurewebsites.net/api/auth/login'],
-        blacklistedRoutes: ['example.com/examplebadroute/']
       }
     })
   ],

@@ -33,8 +33,14 @@ namespace TheFriendShip.Controllers
                 var result = await _signInManager.PasswordSignInAsync(user.UserName, user.Password, false, false);
                 if (result.Succeeded)
                 {
-                    var userToken = BuildToken(user);
-                    return Ok(Newtonsoft.Json.JsonConvert.SerializeObject(new { userToken, user.UserName }));
+
+
+                    LoginReturn theReturn = new LoginReturn
+                    {
+                        tokenString = BuildToken(user),
+                        user = user.UserName
+                    };
+                    return Ok(Newtonsoft.Json.JsonConvert.SerializeObject(theReturn));
                 }
                 else
                 {
