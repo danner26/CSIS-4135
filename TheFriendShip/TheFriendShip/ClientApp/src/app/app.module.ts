@@ -13,6 +13,11 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { Routes, RouterModule } from '@angular/router';
+import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 
 @NgModule({
   declarations: [
@@ -20,7 +25,8 @@ import { Routes, RouterModule } from '@angular/router';
     NavComponent,
     LoginComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    JwtHelperService
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,15 @@ import { Routes, RouterModule } from '@angular/router';
     MaterialModule,
     FlexLayoutModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    JwtHelperService,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['localhost:*', 'https://thefriendshipannerd.azurewebsites.net/api/auth/login'],
+        blacklistedRoutes: ['example.com/examplebadroute/']
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,16 +1,32 @@
-<form (submit)="submit(myform)" #myform="ngForm">
+<form (submit)="submit(registerForm)" #registerForm="ngForm">
   <mat-form-field>
-    <input placeholder="User name" name="username" matInput required />
+    <input placeholder="User name" name="username" [(ngModel)]="model.username" [formControl]="registerFormControl"
+           [errorStateMatcher]="matcher" matInput required />
+    <mat-error *ngIf="registerFormControl.hasError('username') && !registerFormControl.hasError('required')">
+      Username is invalid
+    </mat-error>
+    <mat-error *ngIf="registerFormControl.hasError('required')">
+      Username is <strong>required</strong>
+    </mat-error>
   </mat-form-field>
 
   <mat-form-field>
-    <input placeholder="Password" name="password" matInput required />
+    <input placeholder="Password" name="password" [(ngModel)]="model.password" matInput required />
+    <mat-error *ngIf="registerFormControl.hasError('password') && !registerFormControl.hasError('required')">
+      Password invalid
+    </mat-error>
+    <mat-error *ngIf="registerFormControl.hasError('required')">
+      Password is <strong>required</strong>
+    </mat-error>
   </mat-form-field>
 
   <mat-form-field>
-    <input placeholder="Confirm Password" name="confirm-password" matInput required />
+    <input placeholder="Confirm Password" name="confirmPassword" [(ngModel)]="model.confpassword" matInput required />
+    <mat-error *ngIf="registerFormControl.hasError('passConf') && !registerFormControl.hasError('required')">
+      Passwords do not match
+    </mat-error>
   </mat-form-field>
 
-  <button type="submit" class="loginInput" id="submit" mat-raised-button color="primary">REGISTER</button>
+  <button type="submit" class="loginInput" id="registerSubmit" mat-raised-button color="primary">REGISTER</button>
   <button type="reset" class="loginInput" id="reset" mat-raised-button color="primary">CLEAR</button>
 </form>
