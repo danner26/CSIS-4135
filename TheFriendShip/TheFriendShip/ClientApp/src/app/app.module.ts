@@ -25,8 +25,7 @@ export function tokenGetter() {
     NavComponent,
     LoginComponent,
     HomeComponent,
-    RegisterComponent,
-    JwtHelperService
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +35,6 @@ export function tokenGetter() {
     FlexLayoutModule,
     HttpClientModule,
     FormsModule,
-    JwtHelperService,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

@@ -1,17 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroupDirective, NgForm, Validators, Form } from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
-
 import { User } from '../models/user';
+import { Form, FormsModule } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 
-/** Error when invalid control is dirty, touched, or submitted. */
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
-}
 
 @Component({
   selector: 'app-register',
@@ -24,8 +15,6 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  matcher = new MyErrorStateMatcher();
 
   submit(form: Form) {
     console.log('Submitted');
