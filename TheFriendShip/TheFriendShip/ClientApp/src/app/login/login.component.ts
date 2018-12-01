@@ -20,9 +20,7 @@ export class LoginComponent implements OnInit {
     console.log('Submitted');
 
     //this.http.post('/api/auth/login', this.model).subscribe(status => console.log(status));
-    this.authService.login(this.model).subscribe(user => console.log(user));
-    
-    console.log(form);
+    this.authService.login(this.model).subscribe();
   }
 
 }
