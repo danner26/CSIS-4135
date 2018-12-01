@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { Routes, RouterModule } from '@angular/router';
 import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -25,7 +26,8 @@ export function tokenGetter() {
     NavComponent,
     LoginComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
