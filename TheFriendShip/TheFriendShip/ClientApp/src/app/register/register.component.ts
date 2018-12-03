@@ -23,9 +23,11 @@ export class RegisterComponent implements OnInit {
     console.log(form);
     if (this.model['password'] == this.model['confpassword']) {
       console.log("passwords match");
+      alert("Success! Passwords match");
       //this.authService.register(this.model.username, this.model.password).subscribe(user => console.log(user));
     } else {
       console.log("passwords do not match");
+      alert("Error! Passwords do not match");
     }
   }
 }
