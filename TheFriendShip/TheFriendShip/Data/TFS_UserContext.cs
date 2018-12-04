@@ -14,5 +14,6 @@ namespace TheFriendShip.Data
         }
 
     public DbSet<Models.User> Review { get; set; }
+    public DbSet<Models.User> Photos { get; set; }
 }
 }
