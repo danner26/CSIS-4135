@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TheFriendShip.Data;
 
 namespace TheFriendShip.Migrations
 {
     [DbContext(typeof(TFS_UserContext))]
-    partial class TFS_UserContextModelSnapshot : ModelSnapshot
+    [Migration("20181217044243_migration-test")]
+    partial class migrationtest
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

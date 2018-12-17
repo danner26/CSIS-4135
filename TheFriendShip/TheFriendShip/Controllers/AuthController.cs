@@ -96,7 +96,7 @@ namespace TheFriendShip.Controllers
         {
             var userData = System.IO.File.ReadAllText("Data/UserData.json");
             var users = JsonConvert.DeserializeObject<List<User>>(userData);
-
+            System.Diagnostics.Debug.WriteLine(userData);
             foreach (var user in users)
             {
                 user.UserName = user.UserName.ToLower();
