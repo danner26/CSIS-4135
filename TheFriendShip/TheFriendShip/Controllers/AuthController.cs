@@ -31,7 +31,9 @@ namespace TheFriendShip.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(user.UserName, user.Password, false, false);
+                var userInfo = await _userManager.FindByNameAsync(user.UserName);
+                var result = await _signInManager.CheckPasswordSignInAsync(userInfo, user.Password, false);
+                //var result = await _signInManager.PasswordSignInAsync(user.UserName, user.Password, false, false);
                 if (result.Succeeded)
                 {
 
@@ -54,7 +56,7 @@ namespace TheFriendShip.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterVM user)
         {
-            return await SeedDb();
+            //return await SeedDb();
             if (!string.IsNullOrEmpty(user.UserName))
             {
                 // Make user name lower case

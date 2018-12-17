@@ -47,7 +47,8 @@ namespace TheFriendShip
                 o.Password.RequireNonAlphanumeric = false;
                 o.Password.RequiredLength = 4;
             })
-                .AddEntityFrameworkStores<TFS_UserContext>();
+    .AddEntityFrameworkStores<TFS_UserContext>()
+    .AddSignInManager<SignInManager<User>>();
 
             var key = Encoding.ASCII.GetBytes("Secret Testing Key");
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
