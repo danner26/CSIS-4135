@@ -28,6 +28,30 @@
                 </mat-form-field>
               </td>
             </tr>
+            <tr>
+              <td>
+                <mat-radio-group class="gender-full-width" [(ngModel)]="model.gender" name="gender" matInput required>
+                  <mat-radio-button value="male">Male</mat-radio-button>
+                  <mat-radio-button value="female">Female</mat-radio-button>
+                </mat-radio-group>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field class="city-full-width">
+                  <input type="text" placeholder="City" name="city" [(ngModel)]="model.city" matInput required />
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field class="bday-full-width">
+                  <input matInput [matDatepicker]="bdayPicker" placeholder="Birthdate">
+                  <mat-datepicker-toggle matSuffix [for]="bdayPicker"></mat-datepicker-toggle>
+                  <mat-datepicker #bdayPicker></mat-datepicker>
+                </mat-form-field>
+              </td>
+            </tr>
           </table>
         </form>
           <div class="button-row">

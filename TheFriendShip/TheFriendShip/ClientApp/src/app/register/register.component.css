@@ -21,3 +21,12 @@
   margin-right: 8px;
 }
 
+.gender-full-width {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+
+.mat-radio-button {
+  padding: 0px 8px 0px 8px;
+}
