@@ -1,6 +1,7 @@
 export class User {
   username: string;
   password: string;
+  confpassword: string;
 }
 export interface User {
   id: string;

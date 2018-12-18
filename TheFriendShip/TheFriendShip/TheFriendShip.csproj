@@ -27,6 +27,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20181217213358_photos2.cs" />
+    <Compile Remove="Migrations\20181217213358_photos2.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="ClientApp\src\app\models\user.ts" />
     <None Remove="ClientApp\src\app\modules\material.module.ts" />
   </ItemGroup>
